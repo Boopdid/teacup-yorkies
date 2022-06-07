@@ -1,10 +1,12 @@
+<div class='container-md'>
+  <div class='card-body d-flex flex-column align-items-center'>
+  <div class='card text-white py-3 text-center justify-content-center bg-dark' style='width: 50rem;'>
 <form class='text-center'>
   <h2>{{title}}</h2>
   <p>{{{get_emoji}}}</p>
   <p>{{content}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
   <p>
-
   </p>
   <p>
      {{#if logged_in}}
@@ -19,24 +21,28 @@
                     </form>
        {{/if}}
   </p>
-  
 </div>
-
+<br>
+ <div class='card-body d-flex flex-column align-items-center'>
+  <div class='card text-white py-4  text-center justify-content-center bg-dark' style='width: 50rem;'>
 <h4 class='text-center'>comments:</h4>
  {{#each comments as |comment|}}
- <div class='text-center container container-fluid mt-5 blog comments'>
+ <div class='text-center container container-fluid mt-4 blog comments'>
                    
                       
                            
                             
                             {{>comments}}
 
-                            </div>
+                            
   {{/each}}
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
 
-<div>
 
-</div>
 
 <script src='/js/comment.js'></script>
 

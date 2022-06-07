@@ -5,6 +5,13 @@ body{margin-top:20px;
     
 }
 
+#comment-content { 
+    box-sizing: border-box; 
+    margin: 5%;
+    width: 90%;
+}     
+
+
 .card .card-task-list .task-list .task-list-item .task-item-users .assigned-user .profile-picture {
     width: 34px;
     height: 34px;
