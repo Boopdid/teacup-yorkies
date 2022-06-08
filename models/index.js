@@ -10,6 +10,7 @@ User.hasMany(Tweet, {
 
 Tweet.belongsTo(User, {
   foreignKey: 'user_id',
+  onDelete: 'CASCADE'
 });
 
 Comment.belongsTo(User, {
@@ -18,6 +19,7 @@ Comment.belongsTo(User, {
 
 Comment.belongsTo(Tweet, {
   foreignKey: 'tweet_id',
+  onDelete: 'CASCADE'
 });
 
 User.hasMany(Comment, {
@@ -26,6 +28,7 @@ User.hasMany(Comment, {
 
 Tweet.hasMany(Comment, {
   foreignKey: 'tweet_id',
+  onDelete: 'CASCADE'
 });
 
 module.exports = { User, Tweet, Comment, PotatoOrPitbull };

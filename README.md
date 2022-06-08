@@ -24,13 +24,14 @@ You will need to clone or fork this application for installation and install the
 You will also need to configure your environment variables as this application uses the dotenv package.
 
 ## Usage
-
+![demo](demo.gif)
 
 ## Contributing
 To contribute to this project please contact us, information is below.
 
 ## Tests
-N/A
+try signing into the application as test user:
+email: japan@gmail.com or murphy@gmail.com password: password12345
 
 ## Questions
 Here are our names and contact info. If you have questions, please reach out!
@@ -53,4 +54,4 @@ Here are our names and contact info. If you have questions, please reach out!
 ![heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 
 ## Deployed
-Check out the deployed application on [Heroku](https://teacup-yorkies.herokuapp.com/)
+Check out the deployed application on [Heroku](https://howler-forpets.herokuapp.com/about)

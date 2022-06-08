@@ -1,19 +1,19 @@
 let breeds = [
-	"bengal",
-	"siamese",
-	"sphynx",
-	"savannah",
-	"ragdoll",
-	"bombay",
-	"ragamuffin",
-	"bulldog",
-	"pitbull",
-	"chihuahua",
-	"shihtzu",
-	"bostonterrier",
-	"dobermann",
-	"poodle"
-]
+  'bengal',
+  'siamese',
+  'sphynx',
+  'savannah',
+  'ragdoll',
+  'bombay',
+  'ragamuffin',
+  'bulldog',
+  'pitbull',
+  'chihuahua',
+  'shihtzu',
+  'bostonterrier',
+  'dobermann',
+  'poodle',
+];
 
 let answer = '';
 let maxWrong = 6;
@@ -26,16 +26,27 @@ function randomWord() {
 }
 
 function generateButtons() {
-  let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
-    `
+  let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'
+    .split('')
+    .map(
+      (letter) =>
+        `
       <button
         class="btn btn-lg btn-primary m-2"
-        id='` + letter + `'
-        onClick="handleGuess('` + letter + `')"
+        id='` +
+        letter +
+        `'
+        onClick="handleGuess('` +
+        letter +
+        `')"
       >
-        ` + letter + `
+        ` +
+        letter +
+        `
       </button>
-    `).join('');
+    `
+    )
+    .join('');
 
   document.getElementById('keyboard').innerHTML = buttonsHTML;
 }
@@ -56,24 +67,56 @@ function handleGuess(chosenLetter) {
 }
 
 function updateHangmanPicture() {
-  document.getElementById('hangmanPic').src = './images/hangmanimages/' + mistakes + '.jpg';
+  document.getElementById('hangmanPic').src =
+    './images/hangmanimages/' + mistakes + '.jpg';
 }
 
 function checkIfGameWon() {
   if (wordStatus === answer) {
-    document.getElementById('keyboard').innerHTML = 'You Won!!!';
+    document.getElementById('keyboard').innerHTML = 'You Won!';
+    // const wonAnswer = document.getElementById('wordSpotlight').innerText.trim();
+    // console.log(wonAnswer);
+
+    // switch (wonAnswer) {
+    //   case 'bengal':
+    //     window.alert('bengal');
+    //     break;
+    //   case 'siamese':
+    //     window.alert('siamese');
+    //     break;
+    //   case 'sphynx':
+    //     window.alert('sphynx');
+    //     break;
+    //   case 'savannah':
+    //     window.alert('savannah');
+    //     break;
+    //   case 'ragdoll':
+    //     window.alert('ragdoll');
+    //     break;
+    //   case 'bombay':
+    //     window.alert('bombay');
+    //     break;
+    //   case 'ragamuffin':
+    //     window.alert('ragamuffin');
+    //     break;
+    // }
   }
 }
 
 function checkIfGameLost() {
   if (mistakes === maxWrong) {
-    document.getElementById('wordSpotlight').innerHTML = ` The answer was: <a href="https://www.google.com/search?q=${answer}">${answer} </a>`;
+    document.getElementById(
+      'wordSpotlight'
+    ).innerHTML = ` The answer was: <a href="https://www.google.com/search?q=${answer}">${answer} </a>`;
     document.getElementById('keyboard').innerHTML = 'You Lost!';
   }
 }
 
 function guessedWord() {
-  wordStatus = answer.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
+  wordStatus = answer
+    .split('')
+    .map((letter) => (guessed.indexOf(letter) >= 0 ? letter : ' _ '))
+    .join('');
 
   document.getElementById('wordSpotlight').innerHTML = wordStatus;
 }
